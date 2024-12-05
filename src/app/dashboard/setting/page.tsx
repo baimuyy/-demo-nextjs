@@ -1,5 +1,5 @@
 import React from 'react'
 
 export default function Setting() {
-  return <div>setting</div>
+  return <div className="box">setting content</div>
 }

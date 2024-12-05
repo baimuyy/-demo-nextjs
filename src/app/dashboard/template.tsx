@@ -1,4 +1,3 @@
-import Menus from '@/components/menus'
 import Count from '@/components/count'
 import './page.css'
 
@@ -8,10 +7,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className="box">
-      <h2>我是dashborad layout</h2>
-
-      <Menus></Menus>
+    <div className={`antialiased box`}>
+      <h2>我是dashborad template</h2>
 
       <Count></Count>
 

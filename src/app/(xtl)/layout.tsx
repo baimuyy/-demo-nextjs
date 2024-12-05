@@ -1,6 +1,5 @@
+import React from 'react'
 import Menus from '@/components/menus'
-import Count from '@/components/count'
-import './page.css'
 
 export default function RootLayout({
   children,
@@ -8,14 +7,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className="box">
-      <h2>我是dashborad layout</h2>
-
+    <>
       <Menus></Menus>
-
-      <Count></Count>
-
-      {children}
-    </div>
+      <div className="box">{children}</div>
+    </>
   )
 }
