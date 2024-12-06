@@ -5,11 +5,10 @@ export const metadata: Metadata = {
   title: 'Dashboard',
 }
 
-export default function Dashboard({ children }: { children: React.ReactNode }) {
+export default function Dashboard() {
   return (
     <div>
       <div>Doashboard</div>
-      {children}
     </div>
   )
 }
