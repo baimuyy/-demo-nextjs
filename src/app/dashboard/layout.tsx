@@ -2,7 +2,7 @@ import Menus from '@/components/menus'
 import Count from '@/components/count'
 import './page.css'
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
