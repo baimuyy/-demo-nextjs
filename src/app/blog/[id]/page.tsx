@@ -16,8 +16,9 @@ export async function generateMetadata({ params }: PageProps) {
   }
 }
 
-export default function Page({ params }: PageProps) {
-  const cardInfo = cardList.find(async (item) => item.id === (await params).id)! // 添加非空断言
+export default async function Page({ params }: PageProps) {
+  const id = (await params).id
+  const cardInfo = cardList.find((item) => item.id === id)! // 添加非空断言
 
   return (
     <Card title={cardInfo.title}>
