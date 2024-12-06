@@ -1,5 +1,3 @@
-'use client'
-
 import { Card } from 'antd'
 import { cardList } from '@/data'
 
@@ -12,6 +10,7 @@ interface PageProps {
 // 动态 metadata
 export async function generateMetadata({ params }: PageProps) {
   const id = (await params).id
+
   return {
     title: `博客详情 - ${id}`,
   }
