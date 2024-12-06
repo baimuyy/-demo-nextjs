@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function Dashboard() {
   return (
     <div>
-      <div>Doashboard</div>
+      <div>Doashboard in vercel</div>
     </div>
   )
 }
