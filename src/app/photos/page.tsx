@@ -14,7 +14,7 @@ export default function Page() {
       <div>app / photo / page.js，测试“路由拦截”</div>
       <ul className="list">
         {imgList.map((item) => (
-          <li>
+          <li key={item.id}>
             <Link href={`/photos/${item.id}`} passHref>
               <Image width={200} key={item.id} src={item.url} preview={false} />
             </Link>

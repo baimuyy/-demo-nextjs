@@ -15,7 +15,7 @@ export default async function Dashboard({
       <div>app / @modal / [id] / page.js，测试“路由拦截”</div>
       <div>
         <h4>{imgInfo.title}</h4>
-        <Image width={200} src={imgInfo.url} />
+        <Image width={200} src={imgInfo.url} alt={imgInfo.title} />
       </div>
     </Modal>
   )

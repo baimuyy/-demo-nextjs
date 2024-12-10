@@ -3,7 +3,6 @@
 import { type ElementRef, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { createPortal } from 'react-dom'
-import { Button } from 'antd'
 
 export function Modal({ children }: { children: React.ReactNode }) {
   const router = useRouter()
