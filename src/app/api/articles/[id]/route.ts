@@ -2,14 +2,15 @@ import { NextResponse } from 'next/server'
 import db from '@/db'
 
 interface IParams {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export async function DELETE(request: Request, { params }: IParams) {
-  await db.update(({ posts }) => {
-    const idx = posts.findIndex((post) => post.id === params.id)
+  await db.update(async ({ posts }) => {
+    const id = (await params).id
+    const idx = posts.findIndex((post) => post.id === id)
     posts.splice(idx, 1)
   })
 
@@ -21,10 +22,11 @@ export async function DELETE(request: Request, { params }: IParams) {
 
 export async function PATCH(request: Request, { params }: IParams) {
   const data = await request.json()
+  const id = (await params).id
   let idx = -1
 
   await db.update(({ posts }) => {
-    idx = posts.findIndex((post) => post.id === params.id)
+    idx = posts.findIndex((post) => post.id === id)
     posts[idx] = { ...posts[idx], ...data }
   })
 
@@ -36,7 +38,8 @@ export async function PATCH(request: Request, { params }: IParams) {
 }
 
 export async function GET(request: Request, { params }: IParams) {
-  const data = db.data.posts.find((post) => post.id === params.id)
+  const id = (await params).id
+  const data = db.data.posts.find((post) => post.id === id)
 
   return NextResponse.json({
     code: 0,
