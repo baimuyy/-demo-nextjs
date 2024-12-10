@@ -9,14 +9,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode
+  modal: React.ReactNode
 }>) {
   return (
     <html lang="en">
       <body>
-        <h2>我是根layout</h2>
-        <AntdRegistry>{children}</AntdRegistry>
+        <h2>path: app / layout.js</h2>
+        <AntdRegistry>
+          {children}
+          {modal}
+          <div id="modal-root"></div>
+        </AntdRegistry>
       </body>
     </html>
   )

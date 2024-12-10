@@ -1,6 +1,5 @@
 import Menus from '@/components/menus'
 import Count from '@/components/count'
-import './page.css'
 
 export default function DashboardLayout({
   children,
@@ -9,7 +8,7 @@ export default function DashboardLayout({
 }>) {
   return (
     <div className="box">
-      <h2>我是dashborad layout</h2>
+      <h2>path: dashboard / layout</h2>
 
       <Menus></Menus>
 
